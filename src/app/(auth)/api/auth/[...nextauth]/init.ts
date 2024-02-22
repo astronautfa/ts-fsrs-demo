@@ -68,7 +68,7 @@ export async function initUser(profile: GithubProfile) {
   });
   if (!user) {
     const _user = await initUserAndFSRS(profile);
-    await initProgeigoDates(_user.uid);
+    // await initProgeigoDates(_user.uid);
     return _user;
   }
   return user;

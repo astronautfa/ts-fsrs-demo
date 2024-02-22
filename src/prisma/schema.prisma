@@ -69,18 +69,23 @@ model User {
 }
 
 model Note {
-  nid      Int    @id @unique @default(autoincrement())
+  nid      Int     @id @unique @default(autoincrement())
   uid      Int
-  question String @default("")
-  answer   String @default("")
-  source   String @default("")
+  question String  @default("")
+  answer   String  @default("")
+  source   String  @default("")
   sourceId String?
   extend   Json
   card     Card?
+<<<<<<< Updated upstream
   user     User?  @relation(fields: [uid], references: [uid])
   deleted  Boolean @default(false)
+=======
+  user     User?   @relation(fields: [uid], references: [uid])
+
+>>>>>>> Stashed changes
   @@index([uid])
-  @@index([sourceId,source])
+  @@index([sourceId, source])
 }
 
 enum State {
